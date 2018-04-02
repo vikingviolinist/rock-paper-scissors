@@ -15,3 +15,28 @@ function computerPlay() {
       break;
   }
 }
+
+function playRound(playerSelection, computerSelection) {
+  playerSelection = playerSelection.toLowerCase();
+
+  let playerWins = false;
+  let computerWins = false;
+
+  if (playerSelection === "rock" && computerSelection === "scissors" ||
+    playerSelection === "paper" && computerSelection === "rock" ||
+    playerSelection === "scissors" && computerSelection === "paper") {
+    playerWins = true;
+  } else if (computerSelection === "rock" && playerSelection === "scissors" ||
+    computerSelection === "paper" && playerSelection === "rock" ||
+    computerSelection === "scissors" && playerSelection === "paper") {
+    computerWins = true;
+  }
+
+  if (playerWins === true) {
+    return `You win, for ${playerSelection} beats ${computerSelection}.`;
+  } else if (computerWins === true) {
+    return `You lose, for ${computerSelection} beats ${playerSelection}.`;
+  } else {
+    return `It's a tie, for you both choose ${playerSelection}.`;
+  }
+}
