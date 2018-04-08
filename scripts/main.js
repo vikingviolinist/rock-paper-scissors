@@ -63,11 +63,9 @@ function game() {
   let computerScore = 0;
   let roundCount = 0;
 
-  while (playerScore < 5 && computerScore < 5) {
-    roundCount++;
-    
+  while (roundCount < 5) {    
     console.log('');
-    console.log(`ROUND ${roundCount}`);
+    console.log(`ROUND ${roundCount + 1}`);
 
     const playerSelection = playerPlay();
     const computerSelection = computerPlay();
@@ -81,6 +79,8 @@ function game() {
 
     console.log(`You: ${playerScore}`);
     console.log(`Computer: ${computerScore}`);
+
+    roundCount++;
   }
 
   checkWinner(playerScore, computerScore);
